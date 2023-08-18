@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.org/difi/asic.svg?branch=master)](https://travis-ci.org/difi/asic)
 [![CodeCov](https://codecov.io/gh/difi/asic/branch/master/graph/badge.svg)](https://codecov.io/gh/difi/asic)
-[![Maven Central](https://img.shields.io/maven-central/v/no.difi.commons/commons-asic.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22no.difi.commons%22%20AND%20a%3A%22commons-asic%22)
-
+[![Maven Central](https://img.shields.io/maven-central/v/no.difi.commons/commons-asic?label=difi%20lib%20maven)](https://search.maven.org/artifact/no.difi.commons/commons-asic)
+[![Maven Central](https://img.shields.io/maven-central/v/no.ks.fiks/commons-asic)
+](https://search.maven.org/artifact/no.ks.fiks/commons-asic)
 # Associated Signature Container (ASiC)
 
 An ASiC file is simply a ZIP archive created according to some rules set forth in the specifications. 
