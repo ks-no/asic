@@ -53,6 +53,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.encoding>UTF-8</java.encoding>
         <java.version>11</java.version>
+        <!-- Jakarta EE -->
+        <jakarta.xml.bind-api.version>4.0.5</jakarta.xml.bind-api.version>
+        <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+        <jaxb-runtime.version>4.0.9</jaxb-runtime.version>
+        <!-- Logging -->
+        <slf4j-api.version>2.0.18</slf4j-api.version>
+        <logback-classic.version>1.5.34</logback-classic.version>
+        <!-- Commons -->
+        <commons-codec.version>1.22.0</commons-codec.version>
+        <!-- Bouncy Castle -->
+        <bcpkix-jdk18on.version>1.84</bcpkix-jdk18on.version>
+        <!-- Google -->
+        <guava.version>33.6.0-jre</guava.version>
+        <!-- TestNG -->
+        <testng.version>7.12.0</testng.version>
+        <!-- Maven Plugins -->
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+        <jaxb2-maven-plugin.version>4.1.0</jaxb2-maven-plugin.version>
+        <properties-maven-plugin.version>1.3.0</properties-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
+        <maven-scm-provider-gitexe.version>2.2.1</maven-scm-provider-gitexe.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
     </properties>
 
     <dependencies>
@@ -60,17 +85,17 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.5</version>
+            <version>${jakarta.xml.bind-api.version}</version>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-            <version>3.0.0</version>
+            <version>${jakarta.annotation-api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.9</version>
+            <version>${jaxb-runtime.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- /Jakarta EE -->
@@ -78,12 +103,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>2.0.18</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.34</version>
+            <version>${logback-classic.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -91,7 +116,7 @@
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.22.0</version>
+            <version>${commons-codec.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -99,21 +124,21 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk18on</artifactId>
-            <version>1.84</version>
+            <version>${bcpkix-jdk18on.version}</version>
         </dependency>
 
         <!-- Google -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>33.6.0-jre</version>
+            <version>${guava.version}</version>
         </dependency>
 
         <!-- TestNG testing framework -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.12.0</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -134,7 +159,7 @@
                 <!-- Explicitly declares which version of Java to use -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.15.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -143,12 +168,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>${maven-resources-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.6</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <failIfNoTests>true</failIfNoTests>
                     <!-- Seems this will alleviate the problem of out-of-memory -->
@@ -158,7 +183,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>4.1.0</version>
+                <version>${jaxb2-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>xsd</id>
@@ -182,7 +207,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>${properties-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>set-additional-system-properties</id>
@@ -203,7 +228,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.15</version>
+                <version>${jacoco-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -230,18 +255,18 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>${maven-release-plugin.version}</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.apache.maven.scm</groupId>
                             <artifactId>maven-scm-provider-gitexe</artifactId>
-                            <version>2.2.1</version>
+                            <version>${maven-scm-provider-gitexe.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.12.0</version>
+                    <version>${maven-javadoc-plugin.version}</version>
                     <executions>
                         <execution>
                             <id>package-javadoc</id>
